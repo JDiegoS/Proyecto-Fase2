@@ -1,0 +1,77 @@
+﻿n
+"{type:medio,cantidad:200-500}"
+"{type:bajo,cantidad:-200}"
+{type:solo}
+{type:familia}
+{type:pareja}
+{type:amigos}
+{type:rapida}
+{type:nacional}
+{type:gourmet}
+"{direccion:Calzada Roosevelt 36-68 A - Zona 7 - Guatemala,telefono:22779226,nombre:Hamburguesas Berlin}"
+"{direccion:7 avenida 12-68 zona 9,telefono:23618052,nombre:Carl´s Jr}"
+"{direccion:Ruta 3, Vía 6, Edificio Rue 3, local 2 - Zona 4 - Guatemala,telefono:30785409,nombre:Gula}"
+"{direccion:Diagonal 6, 14-43 (A la par de Kalea) - Zona 10 - Guatemala,telefono:241260000,nombre:Hamburguesas del Puente}"
+"{direccion:2da Calle 23-51, Vista Hermosa, C.C. Punto 15 - Zona 15 - Guatemala,telefono:42888878,nombre:Hamburguesas del Molino}"
+"{direccion:6ta Avenida, 13-05, Plaza 10 - Zona 10 - Guatemala,telefono:23661145,nombre:B2 Better Burguers}"
+"{direccion:2do Nivel, Local 204, CC La Noria, 10 Avenida 12-30 - Zona 14 - Guatemala,telefono:23370999,nombre:Kloster}"
+"{direccion:5ta Avenida, 7-92, Euroshops, Local 7 - Zona 14 - Guatemala,telefono:51513535,nombre:Meli Melo}"
+"{direccion:Via Majadas, Local 8 - Zona 11 - Guatemala,telefono:24745959,nombre:Sushi Itto}"
+"{direccion:6ta Avenida, 16-55 - Zona 10 - Guatemala,telefono:25063333,nombre:Clio´s}"
+"{direccion:4ta avenida 9-40, C.C. Plaza Etú - Zona 14 - Guatemala,telefono:22963343,nombre:Giuseppe Verdi}"
+{type:comida}
+{type:aventura}
+{type:nocturno}
+"{direccion:4ta Avenida, 10-41 - Zona 10 - Guatemala,telefono:22789914,nombre:Saul L'Osteria}"
+"{direccion:Via 5, 2-43 Interior, Casa del Aguila - Zona 4 - Guatemala,telefono:22345823,nombre:Lima 502}"
+"{direccion:Km 19.5 Plaza Novitá, local 6 - Carretera al Salvador - Guatemala,telefono:-,nombre:El Rincon Tipico}"
+"{direccion:6 Av, 11 Calle 6-35 - Zona 1 - Guatemala,telefono:22327252,nombre:El Diamante Tipico}"
+"{direccion:6 Avenida 9-27 - Zona 1 - Guatemala,telefono:54912956,nombre:Casa Tipica}"
+"{direccion:5a. Avenida, 3-27 - Zona 1 - Guatemala,telefono:22380242,nombre:Arrin Cuan}"
+"{direccion:ruta2 4-71 zona 4,telefono:23600294,nombre:Tiendita de la esquina}"
+"{direccion:6 Av, 10-15 - Zona 1 - Guatemala,telefono:50556480,nombre:La Cocina de la Señora Pu}"
+{type:disco}
+{type:bar}
+"{direccion:Blvd. Austriaco, Diagonal 35, 16-25 C.C. Cardales de Cayala - Zona 16 - Guatemala,telefono:22267600 opcion 5,nombre:Jack's Place}"
+"{direccion:1001 Noches - Zona 10 - Guatemala,telefono:32447030,nombre:El Changarro de Rosita}"
+"{direccion:6A Avenida A, Guatemala,telefono:-,nombre:The Secret Garden}"
+"{direccion:5a avenida A 13-64 zona 9, Ciudad de Guatemala,telefono:57776586,nombre:Zero}"
+"{direccion:Km. 9.5 Carretera a Muxbal, C.C. Vista Muxbal Plaza, Local 130,telefono:66466674,nombre:Keg´s}"
+"{direccion:2 Calle 20-93 Zona 15, Vista Hermosa I, Ciudad de Guatemala,telefono:2308-4101,nombre:La Bruja}"
+"{direccion:Arkadia Shopping Mall, zona 10, Ciudad de Guatemala,telefono:50190406,nombre:Abejorro}"
+"{direccion:Blvd. Austriaco 37-01 Zona 16, C.C. Dinamia Cayalá,telefono:23687726,nombre:El Gallo Negro}"
+"{direccion:15 Calle 2-53 Zona 10 Local 4,telefono:57213364,nombre:Maria Cantina}"
+"{direccion:Arkadia Shopping Mall, Zona 10, 3er Nivel,telefono:40341010,nombre:Lenon Bar}"
+"{direccion:Vía 5, 1-81 Zona 4, Ciudad de Guatemala,telefono:23601726,nombre:Karma Gastro-Bar}"
+"{direccion:Plaza Futeca, zona 14, Ciudad de Guatemala,telefono:24451965,nombre:The Rock House}"
+"{direccion:2 Calle 16-76 Zona 15, Blvd. Vista Hermosa, Local D,Ciudad de Guatemala,telefono:50001674,nombre:Ricochet}"
+"{direccion:Paseo Cayalá, zona 16, Ciudad de Guatemala,telefono:23692255,nombre:Shotios}"
+"{direccion:10 Avenida 18-02,Centro Comercial Prisa,telefono:24455258,nombre:Saint Patrick's Bar}"
+"{direccion:Plaza Futeca - Zona 14 - Guatemala,telefono:31406595,nombre:La Playa}"
+"{direccion:Ruta 3, Vía 5 esquina - Zona 4 - Guatemala,telefono:23623487,nombre:El principe gris}"
+"{direccion:15 avenida 14-72 Edificio Agexport - Zona 13 - Guatemala,telefono:32447030,nombre:Santos}"
+"{direccion:Dinamia Cayalá, zona 16 Ciudad de Guatemala,telefono:32447030,nombre:Mr. Absurd}"
+"{direccion:31calle11-63 zona 12,telefono:41285304,nombre:Cañas}"
+"{direccion:9a. Calle y 7a. Avenida D Lote 30,Ciudad San Cr El Campanero,telefono:24433636,nombre:Strike Zone}"
+"{direccion:Km. 162 Carretera a Coban,telefono:42143791,nombre:Mundo Perdido Coban}"
+"{direccion:Avenida Petapa 42-36 zona 12, Ciudad de Guatemala,telefono:22451100,nombre:Irtra Petapa}"
+"{direccion:Km. 180.5 Carretera a Quetzaltenango por la costa,Retalhuleu,telefono:2299-2600 ext:102,nombre:Xejuyup}"
+"{direccion:km 11.5 final Avenida Hincapié, Ciudad de Guatemala,telefono:28113953,nombre:X Park}"
+"{direccion:Km. 77.5 Autopista Puerto Quetzal, Quinta La Ponderosa, Puerto San José,Escuintla,telefono:24241800,nombre:El Viejo Oeste}"
+"{direccion:Km. 149 Ruta al Atlántico,El Rosario,Zacapa,telefono:23891550,nombre:Valle Dorado}"
+"{direccion:Panajachel, Sololá,telefono:32311215,nombre:Peter´s Extreme Tours}"
+"{direccion:San Juan La Laguna,Sololá,telefono:32311215,nombre:Parque Tzankujil}"
+"{direccion:Avenida Puente de la Gloria,Riveras del Rio Micha,telefono:66441000,nombre:Santa Teresita}"
+"{direccion:En medio de las lagunas Petenchel y Monifata,Petén,telefono:22235000,nombre:Villa Maya Hotel}"
+"{direccion:Santa Cruz La Laguna,Sololá,telefono:58112001,nombre:Free Cerveza}"
+"{direccion:Chiquimula,telefono:55124870,nombre:Finca Las Flores Tituque}"
+"{direccion:kilómetro 37.5,Sacatepequez,telefono:57003636,nombre:Glamping Casa Blanca}"
+"{direccion:Aldea El Hato,Sacatepequez,telefono:54280034,nombre:Eco Restaurante San Luis}"
+"{direccion:Antigua Guatemala,Sacatepequez,telefono:30310511,nombre:Trek Guatemala}"
+"{direccion:Km 24 Carretera a El Salvador,telefono:24584599,nombre:Green Rush}"
+"{direccion:Panajachel,Solola,telefono:77621205,nombre:Selina Atitlan}"
+"{direccion:El paredon buena vista Escuintla Guatemala,telefono:30733511,nombre:Cocorilodge}"
+"{direccion:Rio Dulce,Izabal,telefono:77944300,nombre:Hotel Catamaran sobre Rio Dulce}"
+{type:relajante}
+{type:tourism}
+"{type:alto,cantidad:+500}"

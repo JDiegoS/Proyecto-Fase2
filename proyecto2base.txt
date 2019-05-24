@@ -1,5 +1,5 @@
 //Create nodes for tourism 4 types
-CREATE (comida:Tourism{type:"comida"}),(aventura:Tourism{type:"aventura"}),(nocturno:Tourism{type:"nocturno"}),(relajante:Tourism{type:"relajante"})
+CREATE (comida:Tourism{type:"comida"}),(aventura:Tourism{type:"aventura"}),(nocturno:Tourism{type:"nocturno"}),(relajante:Tourism{type:"relajante"}),(tourism:Tourism{type:"tourism"})
 
 //Create nodes for budget 3 types 
 CREATE (alto:Budget{type:"alto",cantidad:"+500"}),(medio:Budget{type:"medio",cantidad:"200-500"}),(bajo:Budget{type:"bajo",cantidad:"-200"})
@@ -10,13 +10,13 @@ CREATE (solo:Companion{type:"solo"}),(familia:Companion{type:"familia"}),(pareja
 //Create node for types of food 3 types
 CREATE (rapida:Food{type:"rapida"}),(nacional:Food{type:"nacional"}),(gourmet:Food{type:"gourmet"})
 
+
 //Create places for fast food
 CREATE (berlin:Place{nombre:"Hamburguesas Berlin",telefono:"22779226",direccion:"Calzada Roosevelt 36-68 A - Zona 7 - Guatemala"}),(carls:Place{nombre:"Carl´s Jr",telefono:"23618052",direccion:"7 avenida 12-68 zona 9"}),(gula:Place{nombre:"Gula",telefono:"30785409",direccion:"Ruta 3, Vía 6, Edificio Rue 3, local 2 - Zona 4 - Guatemala"}),(delpuente:Place{nombre:"Hamburguesas del Puente",telefono:"241260000",direccion:"Diagonal 6, 14-43 (A la par de Kalea) - Zona 10 - Guatemala"}),(delmolino:Place{nombre:"Hamburguesas del Molino",telefono:"42888878",direccion:"2da Calle 23-51, Vista Hermosa, C.C. Punto 15 - Zona 15 - Guatemala"}),(betwo:Place{nombre:"B2 Better Burguers",telefono:"23661145",direccion:"6ta Avenida, 13-05, Plaza 10 - Zona 10 - Guatemala"})
 //Create relations
 CREATE (rapida)-[:ES]->(comida),(nacional)-[:ES]->(comida),(gourmet)-[:ES]->(comida),(berlin)-[:ES]->(rapida),(berlin)-[:TIENE]->(bajo),(carls)-[:ES]->(rapida),(carls)-[:TIENE]->(bajo),(gula)-[:ES]->(rapida),(gula)-[:TIENE]->(alto),(delpuente)-[:ES]->(rapida),(delpuente)-[:TIENE]->(alto),(delmolino)-[:ES]->(rapida),(delmolino)-[:TIENE]->(medio),(betwo)-[:ES]->(rapida),(betwo)-[:TIENE]->(medio)
 
 //HASTA AQUI TODO BIEN
-
 //Create places for gourmet food
 CREATE (kloster:Place{nombre:"Kloster",telefono:"23370999",direccion:"2do Nivel, Local 204, CC La Noria, 10 Avenida 12-30 - Zona 14 - Guatemala"}),(meli:Place{nombre:"Meli Melo",telefono:"51513535",direccion:"5ta Avenida, 7-92, Euroshops, Local 7 - Zona 14 - Guatemala"}),(sushiito:Place{nombre:"Sushi Itto",telefono:"24745959",direccion:"Via Majadas, Local 8 - Zona 11 - Guatemala"}),(clios:Place{nombre:"Clio´s",telefono:"25063333",direccion:"6ta Avenida, 16-55 - Zona 10 - Guatemala"}),(giu:Place{nombre:"Giuseppe Verdi",telefono:"22963343",direccion:"4ta avenida 9-40, C.C. Plaza Etú - Zona 14 - Guatemala"}),(osteria:Place{nombre:"Saul L'Osteria",telefono:"22789914",direccion:"4ta Avenida, 10-41 - Zona 10 - Guatemala"}),(lima:Place{nombre:"Lima 502",telefono:"22345823",direccion:"Via 5, 2-43 Interior, Casa del Aguila - Zona 4 - Guatemala"})
 //Create relations for gourmet restaurants
@@ -26,7 +26,8 @@ CREATE (gourmet)-[:ES]->(comida),(kloster)-[:ES]->(gourmet),(kloster)-[:TIENE]->
 CREATE (rincon:Place{nombre:"El Rincon Tipico",telefono:"-",direccion:"Km 19.5 Plaza Novitá, local 6 - Carretera al Salvador - Guatemala"}),(diamante:Place{nombre:"El Diamante Tipico",telefono:"22327252",direccion:"6 Av, 11 Calle 6-35 - Zona 1 - Guatemala"}),(casa:Place{nombre:"Casa Tipica",telefono:"54912956",direccion:"6 Avenida 9-27 - Zona 1 - Guatemala"}),(arrin:Place{nombre:"Arrin Cuan",telefono:"22380242",direccion:"5a. Avenida, 3-27 - Zona 1 - Guatemala"}),(tiendita:Place{nombre:"Tiendita de la esquina",telefono:"23600294",direccion:"ruta2 4-71 zona 4"}),(pu:Place{nombre:"La Cocina de la Señora Pu",telefono:"50556480",direccion:"6 Av, 10-15 - Zona 1 - Guatemala"})
 //Create relations for national food
 CREATE (nacional)-[:ES]->(comida),(rincon)-[:ES]->(nacional),(rincon)-[:TIENE]->(bajo),(diamante)-[:ES]->(nacional),(diamante)-[:TIENE]->(bajo),(casa)-[:ES]->(nacional),(casa)-[:TIENE]->(bajo),(arrin)-[:ES]->(nacional),(arrin)-[:TIENE]->(medio),(tiendita)-[:ES]->(nacional),(tiendita)-[:TIENE]->(alto),(pu)-[:ES]->(nacional),(pu)-[:TIENE]->(alto)
-
+//Create node for types of nocturno 2 types
+CREATE (disco:Nocturno{type:"disco"}),(bar:Nocturno{type:"bar"})
 //Create nodes for nocturno disco
 CREATE (jacks:Place{nombre:"Jack's Place",telefono:"22267600 opcion 5",direccion:"Blvd. Austriaco, Diagonal 35, 16-25 C.C. Cardales de Cayala - Zona 16 - Guatemala"}),(kuto:Place{nombre:"El Changarro de Rosita",telefono:"32447030",direccion:"1001 Noches - Zona 10 - Guatemala"}),(secret:Place{nombre:"The Secret Garden",telefono:"-",direccion:"6A Avenida A, Guatemala"}),(zero:Place{nombre:"Zero",telefono:"57776586",direccion:"5a avenida A 13-64 zona 9, Ciudad de Guatemala"}),(kegs:Place{nombre:"Keg´s",telefono:"66466674",direccion:"Km. 9.5 Carretera a Muxbal, C.C. Vista Muxbal Plaza, Local 130"}),(bruja:Place{nombre:"La Bruja",telefono:"2308-4101",direccion:"2 Calle 20-93 Zona 15, Vista Hermosa I, Ciudad de Guatemala"}),(abejorro:Place{nombre:"Abejorro",telefono:"50190406",direccion:"Arkadia Shopping Mall, zona 10, Ciudad de Guatemala"}),(gallo:Place{nombre:"El Gallo Negro",telefono:"23687726",direccion:"Blvd. Austriaco 37-01 Zona 16, C.C. Dinamia Cayalá"}),(maria:Place{nombre:"Maria Cantina",telefono:"57213364",direccion:"15 Calle 2-53 Zona 10 Local 4"}),(lenon:Place{nombre:"Lenon Bar",telefono:"40341010",direccion:"Arkadia Shopping Mall, Zona 10, 3er Nivel"})
 //Create relations for nocturno in disco
@@ -50,5 +51,3 @@ CREATE (relajante)-[:ES]->(tourism),(santa)-[:ES]->(relajante),(santa)-[:TIENE]-
 //Create relations
 CREATE (comida)-[:ES]->(tourism),(aventura)-[:ES]->(tourism),(relajante)-[:ES]->(tourism),(nocturno)-[:ES]->(tourism)
 
-//relations
-CREATE (rapida)-[:ES]->(comida)

@@ -7,8 +7,9 @@ from neo4j import *
 from numpy import *
 from tkinter import *
 import tkinter.messagebox
-from BaseDeDatos import *
+from funciones import *
 
+#variables
 window = Tk()
 window.title("Sistema de Recomendacion")
 window.configure(background="white")
@@ -16,9 +17,11 @@ window.geometry("900x800")
 var1 = IntVar()
 var2 = IntVar()
 var3 = IntVar()
-dinero = "f"
+dinero = ""
 actividad = ""
 compan = ""
+
+#Funcion que recomienda en base de lo que selecciono
 def selection():
     if (var1.get()==0 or var2.get()==0 or var3.get()==0):
         print("err")
@@ -27,10 +30,6 @@ def selection():
         valor = var1.get()
         if valor==1:
             dinero = "bajo"
-            lo = "s"
-            print("dsssd")
-            print(dinero)
-            h()
         elif valor==2:
             dinero = "medio"
         elif valor==3:
@@ -57,17 +56,12 @@ def selection():
             actividad = "nocturno"
         elif valor3==4:
             actividad = "relajante"
-            print("dsssd")
+            
         
     res = recomendacion(dinero, compan, actividad)
-    print(res)
-def h():
-    print(var1.get())
-holaa()
-scroll = Scrollbar(window)
-#scroll.pack(side=RIGHT, fill=Y)
-#scroll.grid(rowspan=4, column=5, pady=4, sticky = N+S)
+    Label(window, text= str(res), bg="white", fg = "black", font="times 20 bold").grid(row=12, column=1, columnspan=6)
 
+#Se crea interfaz
 Label(window, text="ACTIVIDADES Y LUGARES A VISITAR EN", bg="white", font="times 30 italic bold").grid(row=0, columnspan=6)
 Label(window, text="GUATEMALA", bg="white", font="times 30 italic bold").grid(row=1, columnspan=6)
 
@@ -102,6 +96,11 @@ Radiobutton(window, text="Relajante", bg="gray", fg="black",font="times 16 bold"
 #Entry(window, bg="gray", fg = "white", font="times 16 bold italic").grid(row=5,column=2, sticky=W)
 #Entry(window, bg="gray", fg = "white", font="times 16 bold italic").grid(row=6,column=2, sticky=W)
 
-Button(window, text="INGRESAR", bg="black", fg="white", font="times 16 bold", command=selection).grid(row=12,columnspan=6)
+#Cuando presiona el boton
+Button(window, text="INGRESAR", bg="black", fg="white", font="times 16 bold", command=selection).grid(row=9,columnspan=6)
+
+
+
 
 window.mainloop()
+

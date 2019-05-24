@@ -1,14 +1,21 @@
-#Hoja de Trabajo 10
+#Proyecto 2 
 #Juan Diego Solorzano 18151
-#Andrea Paniagua
+#Andrea Paniagua 18733
 
 from py2neo import *
 from neo4j import *
 from numpy import *
 from tkinter import *
+from neo4j import GraphDatabase, basic_auth
+class Database(object):
 
-db = Graph(password = "prueba123")
+    """Set database driver"""
+    def __init__(self, uri,user,password):
+        self._driver = GraphDatabase.driver(uri, auth=(user, password))        
 
+    """Close database"""
+    def close(self):
+        self._driver.close()
 
 def crearUsuario(nombre, edad):
     db.run("CREATE (u:Usuario {name:'"+nombre+"', age:'"+edad+"'})")
@@ -56,7 +63,7 @@ def recomendacion(dinero, compan, actividad):
     print("Te sugerimos visitar los siguientes lugares: \n")
     for i in act:
         print("" + i +"\n")
-
+    
 
 #PROBA AQUI con los tipos ejemplo("bajo","solo","nocturno")
 recomendacion("BUDGET","COMPANIA","TIPO")

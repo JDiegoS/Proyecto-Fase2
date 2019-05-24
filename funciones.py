@@ -20,7 +20,7 @@ def crearRating(nombre, lugar, leGusto):
 def recomendacion(dinero, compan, actividad):
 
     act = []
-    nombres = db.run("MATCH (p:Place)-[:ES]->(t:Tourism) WHERE p.name = '"+actividad+"' RETURN p.name").to_ndarray()
+    nombres = db.run("MATCH (p:Place)-[:ES]->(t:Tourism) WHERE t.type = '"+actividad+"' RETURN p.name").to_ndarray()
     
     for i in nombres:
             nombres = str(nombres[i])
@@ -31,7 +31,7 @@ def recomendacion(dinero, compan, actividad):
 
     
 
-    doc = db.run("MATCH (p:Place)-[:TIENE]->(m:Medicine) WHERE p.name = '"+dinero+"' RETURN m.name").to_ndarray()
+    doc = db.run("MATCH (p:Place)-[:TIENE]->(b:Budget) WHERE b.type = '"+dinero+"' RETURN p.name").to_ndarray()
     for i in doc:
         for x in act:
             if str(i) == "['"+str(x)+"']":
@@ -42,7 +42,7 @@ def recomendacion(dinero, compan, actividad):
                 act.append(doc3)
 
 
-    doc4 = db.run("MATCH (p:Doctor)-[:PERSCRIBE]->(m:Medicine) WHERE p.name = '"+actividad+"' RETURN m.name").to_ndarray()
+    doc4 = db.run("MATCH (p:Place)-[:IR]->(c:Companion) WHERE c.type = '"+compan+"' RETURN p.name").to_ndarray()
     for i in nombres:
         for x in act:
             
@@ -58,5 +58,5 @@ def recomendacion(dinero, compan, actividad):
         print("" + i +"\n")
 
 
-#PROBA AQUI
+#PROBA AQUI con los tipos ejemplo("bajo","solo","nocturno")
 recomendacion("BUDGET","COMPANIA","TIPO")

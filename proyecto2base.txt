@@ -5,7 +5,7 @@ CREATE (comida:Tourism{type:"comida"}),(aventura:Tourism{type:"aventura"}),(noct
 CREATE (alto:Budget{type:"alto",cantidad:"+500"}),(medio:Budget{type:"medio",cantidad:"200-500"}),(bajo:Budget{type:"bajo",cantidad:"-200"})
 
 //Create nodes for companion 4 types
-CREATE (solo:Companion{type:"solo"}),(familia:Companion{type:"familia"}),pareja:Companion{type:"pareja"}),(amigos:Companion{type:"amigos"})
+CREATE (solo:Companion{type:"solo"}),(familia:Companion{type:"familia"}),(pareja:Companion{type:"pareja"}),(amigos:Companion{type:"amigos"})
 
 //Create node for types of food 3 types
 CREATE (rapida:Food{type:"rapida"}),(nacional:Food{type:"nacional"}),(gourmet:Food{type:"gourmet"})

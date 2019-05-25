@@ -11,11 +11,14 @@ db = Graph(password = "prueba123")
 
 
 def crearUsuario(nombre, edad):
-    db.run("CREATE (u:Usuario {name:'"+nombre+"', age:'"+edad+"'})")
+    db.run("CREATE (u:Usuario {nombre:'"+nombre+"', edad:'"+edad+"'})")
 
 def crearRating(nombre, lugar, leGusto):
     if leGusto == "si":
         db.run("MATCH (u:Usuario), (p:Place) WHERE u.nombre = '"+nombre+"' AND p.nombre = '"+lugar+"' CREATE (u)-[:LIKES]-> (p)")
+    elif leGusto == "no":
+        db.run("MATCH (u:Usuario), (p:Place) WHERE u.nombre = '"+nombre+"' AND p.nombre = '"+lugar+"' CREATE (u)-[:DISLIKES]-> (p)")
+
 def verificar(resul):
 
     if len(resul) != 0:
@@ -184,3 +187,4 @@ def recomendacion(dinero, compan, actividad):
     result = verificar(act)
     return result
     
+

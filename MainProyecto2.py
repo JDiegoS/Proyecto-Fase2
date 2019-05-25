@@ -17,6 +17,10 @@ window.geometry("1300x800")
 var1 = IntVar()
 var2 = IntVar()
 var3 = IntVar()
+var4 = IntVar()
+strvar1 = StringVar()
+strvar2 = StringVar()
+strvar3 = StringVar()
 dinero = ""
 actividad = ""
 compan = ""
@@ -78,7 +82,7 @@ def ResultsPage():
     
     top = Toplevel()
     top.title("Recomendaciones")
-    top.geometry("1100x800")
+    top.geometry("1250x1100")
     fotoGuate2 = PhotoImage(file="gt.png")
     foto= Label(top, image=fotoGuate2, height = "300", bg="white").grid(row=0, column=6, columnspan=6)
     Label(top, text= t, bg="white", fg = "black", font="times 12 bold").grid(row=6, column=0, columnspan=2)
@@ -86,7 +90,42 @@ def ResultsPage():
     Label(top, text= g, bg="white", fg = "black", font="times 12 bold").grid(row=6, column=16, columnspan=2)
     Label(top, text= r, bg="white", fg = "black", font="times 12 bold").grid(row=7, column=10, columnspan=2)
 
-    
+    Button(top, text="EVALUAR RECOMENDACION", bg="black", fg="white", font="times 16 bold", command=EvaluatePage).grid(row=10,column=11, sticky=W)
+
+def EvaluatePage():
+
+    top2 = Toplevel()
+    top2.title("Retroalimentacion")
+    top2.geometry("500x450")
+    Label(top2, text="RETROALIMENTACION", bg="white", font="times 30 italic bold").grid(row=0, columnspan=6)
+
+    Label(top2, text="Nombre", bg="white", font="times 16 bold").grid(row=4, column=1, sticky=E)
+    Label(top2, text="Edad", bg="white", font="times 16 bold").grid(row=5, column=1, sticky=E)
+    Label(top2, text="Lugar a evaluar", bg="white", font="times 16 bold").grid(row=6, column=1, sticky=E)
+    Label(top2, text="Le sirvio la recomendacion?", bg="white", font="times 16 bold").grid(row=7, column=1, sticky=E)
+
+    entry1 = Entry(top2, bg="gray", fg = "white", font="times 16 bold italic", textvariable=strvar1).grid(row=4,column=2, sticky=W)
+    entry2 = Entry(top2, bg="gray", fg = "white", font="times 16 bold italic", textvariable=strvar2).grid(row=5,column=2, sticky=W)
+    entry3 = Entry(top2, bg="gray", fg = "white", font="times 16 bold italic", textvariable=strvar3).grid(row=6,column=2, sticky=W)
+    Radiobutton(top2, text="Si", bg="gray", fg="black",font="times 16 bold", value=1, variable = var4).grid(row=7,column=2,sticky=W)
+    Radiobutton(top2, text="No", bg="gray", fg="black",font="times 16 bold", value=2, variable = var4).grid(row=7,column=3,sticky=W)
+
+    Button(top2, text="ENVIAR", bg="black", fg="white", font="times 16 bold", command=evaluate).grid(row=10,column=2, sticky=W)
+
+def evaluate():
+    nombreUsuario = strvar1.get()
+    edadUsuario = strvar2.get()
+    crearUsuario(nombreUsuario, edadUsuario)
+
+    lugarEvaluado = strvar3.get()
+    calif = ""
+    valor4 = var4.get()
+    if valor4 == 1:
+        calif = "si"
+    elif valor4 == 2:
+        calif = "no"
+    crearRating(nombreUsuario, lugarEvaluado, calif)
+
 def StartPage():
     
     #Se crea interfaz
@@ -122,9 +161,7 @@ def StartPage():
     Radiobutton(window, text="Comida Gourmet", bg="gray", fg="black",font="times 16 bold", value=6, variable = var3).grid(row=6,column=7,sticky=W)
 
 
-    #Entry(window, bg="gray", fg = "white", font="times 16 bold italic").grid(row=4,column=2, sticky=W)
-    #Entry(window, bg="gray", fg = "white", font="times 16 bold italic").grid(row=5,column=2, sticky=W)
-    #Entry(window, bg="gray", fg = "white", font="times 16 bold italic").grid(row=6,column=2, sticky=W)
+    
 
     #Cuando presiona el boton
     Button(window, text="INGRESAR", bg="black", fg="white", font="times 16 bold", command=ResultsPage).grid(row=10,columnspan=6)

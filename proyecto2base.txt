@@ -8,8 +8,7 @@ CREATE (alto:Budget{type:"alto",cantidad:"+500"}),(medio:Budget{type:"medio",can
 CREATE (solo:Companion{type:"solo"}),(familia:Companion{type:"familia"}),(pareja:Companion{type:"pareja"}),(amigos:Companion{type:"amigos"})
 
 //Create node for types of food 3 types
-CREATE (rapida:Food{type:"rapida"}),(nacional:Food{type:"nacional"}),(gourmet:Food{type:"gourmet"})
-
+CREATE (rapida:Tourism{type:"comida rapida"}),(nacional:Tourism{type:"comida nacional"}),(gourmet:Tourism{type:"comida gourmet"})
 
 //Create places for fast food
 CREATE (berlin:Place{nombre:"Hamburguesas Berlin",telefono:"22779226",direccion:"Calzada Roosevelt 36-68 A - Zona 7 - Guatemala"}),(carls:Place{nombre:"Carl´s Jr",telefono:"23618052",direccion:"7 avenida 12-68 zona 9"}),(gula:Place{nombre:"Gula",telefono:"30785409",direccion:"Ruta 3, Vía 6, Edificio Rue 3, local 2 - Zona 4 - Guatemala"}),(delpuente:Place{nombre:"Hamburguesas del Puente",telefono:"241260000",direccion:"Diagonal 6, 14-43 (A la par de Kalea) - Zona 10 - Guatemala"}),(delmolino:Place{nombre:"Hamburguesas del Molino",telefono:"42888878",direccion:"2da Calle 23-51, Vista Hermosa, C.C. Punto 15 - Zona 15 - Guatemala"}),(betwo:Place{nombre:"B2 Better Burguers",telefono:"23661145",direccion:"6ta Avenida, 13-05, Plaza 10 - Zona 10 - Guatemala"})

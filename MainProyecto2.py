@@ -13,7 +13,7 @@ from funciones import *
 window = Tk()
 window.title("Sistema de Recomendacion")
 window.configure(background="white")
-window.geometry("900x800")
+window.geometry("1300x800")
 var1 = IntVar()
 var2 = IntVar()
 var3 = IntVar()
@@ -22,9 +22,9 @@ actividad = ""
 compan = ""
 
 #Funcion que recomienda en base de lo que selecciono
-def selection():
+def ResultsPage():
     if (var1.get()==0 or var2.get()==0 or var3.get()==0):
-        print("err")
+        
         tkinter.messagebox.showinfo("Error", "Debe seleccionar una opcion para cada pregunta")
     else:
         valor = var1.get()
@@ -51,56 +51,87 @@ def selection():
         if valor3==1:
             actividad = "aventura"
         elif valor3==2:
-            actividad = "comida"
+            actividad = "comida rapida"
         elif valor3==3:
             actividad = "nocturno"
         elif valor3==4:
             actividad = "relajante"
-            
+        elif valor3==5:
+            actividad = "comida nacional"
+        elif valor3==6:
+            actividad = "comida gourmet"
         
+            
+    #Muestra en pantalla los resultados segun el return de la funcion recomendacion   
     res = recomendacion(dinero, compan, actividad)
-    Label(window, text= str(res), bg="white", fg = "black", font="times 20 bold").grid(row=12, column=1, columnspan=6)
+    x = 1
+    t = "SEGUN TIPO DE ACTIVIDAD: \n"+ res[0]+"\n"
+    p = "SEGUN PRESUPUESTO: \n"+ res[1]+ "\n"
+    g = "SEGUN TAMANIO DE GRUPO: \n"+ res[2]+"\n"
+    r = "RECOMENDACION FINAL (SATISFACE LAS TRES CONDICIONES): \n" + res[3]+ "\n"
+    if len(res) >= 5:
+        r = r + res[4] + res[5] +"\n"
+        if len(res) >= 7:
+            r = r + res[4] + res[5] +"\n"
+            if len(res) == 9:
+                r = r + res[8] + res[9] +"\n"
+    
+    top = Toplevel()
+    top.title("Recomendaciones")
+    top.geometry("1100x800")
+    fotoGuate2 = PhotoImage(file="gt.png")
+    foto= Label(top, image=fotoGuate2, height = "300", bg="white").grid(row=0, column=6, columnspan=6)
+    Label(top, text= t, bg="white", fg = "black", font="times 12 bold").grid(row=6, column=0, columnspan=2)
+    Label(top, text= p, bg="white", fg = "black", font="times 12 bold").grid(row=6, column=10, columnspan=2)
+    Label(top, text= g, bg="white", fg = "black", font="times 12 bold").grid(row=6, column=16, columnspan=2)
+    Label(top, text= r, bg="white", fg = "black", font="times 12 bold").grid(row=7, column=10, columnspan=2)
 
-#Se crea interfaz
-Label(window, text="ACTIVIDADES Y LUGARES A VISITAR EN", bg="white", font="times 30 italic bold").grid(row=0, columnspan=6)
-Label(window, text="GUATEMALA", bg="white", font="times 30 italic bold").grid(row=1, columnspan=6)
-
-
-fotoGuate = PhotoImage(file="Guatemala.png")
-foto= Label(window, image=fotoGuate, bg="white").grid(row=2, columnspan=6)
-
-
-Label(window, text="Por favor ingrese los siguientes datos para realizar una recomendacion:", bg="white", font="times 20 bold").grid(row=3, column=0, columnspan=6)
-
-Label(window, text="Presupuesto (Quetzales)", bg="white", font="times 16 bold").grid(row=4, column=1, sticky=E)
-Label(window, text="Grupo a realizar actividad", bg="white", font="times 16 bold").grid(row=5, column=1, sticky=E)
-Label(window, text="Tipo de actividad", bg="white", font="times 16 bold").grid(row=6, column=1, sticky=E)
-
-
-Radiobutton(window, text="<200", bg="gray", fg="black",font="times 16 bold", value=1, variable = var1).grid(row=4,column=2,sticky=W)
-Radiobutton(window, text="200-500", bg="gray", fg="black",font="times 16 bold", value=2, variable = var1).grid(row=4,column=3,sticky=W)
-Radiobutton(window, text=">500", bg="gray", fg="black",font="times 16 bold", value=3, variable = var1).grid(row=4,column=4,sticky=W)
-
-Radiobutton(window, text="Solo", bg="gray", fg="black",font="times 16 bold", value=1, variable = var2).grid(row=5,column=2,sticky=W)
-Radiobutton(window, text="Familia", bg="gray", fg="black",font="times 16 bold", value=2, variable = var2).grid(row=5,column=3,sticky=W)
-Radiobutton(window, text="Pareja", bg="gray", fg="black",font="times 16 bold", value=3, variable = var2).grid(row=5,column=4,sticky=W)
-Radiobutton(window, text="Amigos", bg="gray", fg="black",font="times 16 bold", value=4, variable = var2).grid(row=5,column=5,sticky=W)
-
-Radiobutton(window, text="Aventura", bg="gray", fg="black",font="times 16 bold", value=1, variable = var3).grid(row=6,column=2,sticky=W)
-Radiobutton(window, text="Comida", bg="gray", fg="black",font="times 16 bold", value=2, variable = var3).grid(row=6,column=3,sticky=W)
-Radiobutton(window, text="Nocturno", bg="gray", fg="black",font="times 16 bold", value=3, variable = var3).grid(row=6,column=4,sticky=W)
-Radiobutton(window, text="Relajante", bg="gray", fg="black",font="times 16 bold", value=4, variable = var3).grid(row=6,column=5,sticky=W)
+    
+def StartPage():
+    
+    #Se crea interfaz
+    Label(window, text="ACTIVIDADES Y LUGARES A VISITAR EN", bg="white", font="times 30 italic bold").grid(row=0, columnspan=6)
+    Label(window, text="GUATEMALA", bg="white", font="times 30 italic bold").grid(row=1, columnspan=6)
 
 
-#Entry(window, bg="gray", fg = "white", font="times 16 bold italic").grid(row=4,column=2, sticky=W)
-#Entry(window, bg="gray", fg = "white", font="times 16 bold italic").grid(row=5,column=2, sticky=W)
-#Entry(window, bg="gray", fg = "white", font="times 16 bold italic").grid(row=6,column=2, sticky=W)
-
-#Cuando presiona el boton
-Button(window, text="INGRESAR", bg="black", fg="white", font="times 16 bold", command=selection).grid(row=9,columnspan=6)
+    fotoGuate = PhotoImage(file="Guatemala.png")
+    foto= Label(window, image=fotoGuate, bg="white").grid(row=2, columnspan=6)
 
 
+    Label(window, text="Por favor ingrese los siguientes datos para realizar una recomendacion:", bg="white", font="times 20 bold").grid(row=3, column=0, columnspan=6)
+
+    Label(window, text="Presupuesto (Quetzales)", bg="white", font="times 16 bold").grid(row=4, column=1, sticky=E)
+    Label(window, text="Grupo a realizar actividad", bg="white", font="times 16 bold").grid(row=5, column=1, sticky=E)
+    Label(window, text="Tipo de actividad", bg="white", font="times 16 bold").grid(row=6, column=1, sticky=E)
 
 
-window.mainloop()
+    Radiobutton(window, text="<200", bg="gray", fg="black",font="times 16 bold", value=1, variable = var1).grid(row=4,column=2,sticky=W)
+    Radiobutton(window, text="200-500", bg="gray", fg="black",font="times 16 bold", value=2, variable = var1).grid(row=4,column=3,sticky=W)
+    Radiobutton(window, text=">500", bg="gray", fg="black",font="times 16 bold", value=3, variable = var1).grid(row=4,column=4,sticky=W)
+
+    Radiobutton(window, text="Solo", bg="gray", fg="black",font="times 16 bold", value=1, variable = var2).grid(row=5,column=2,sticky=W)
+    Radiobutton(window, text="Familia", bg="gray", fg="black",font="times 16 bold", value=2, variable = var2).grid(row=5,column=3,sticky=W)
+    Radiobutton(window, text="Pareja", bg="gray", fg="black",font="times 16 bold", value=3, variable = var2).grid(row=5,column=4,sticky=W)
+    Radiobutton(window, text="Amigos", bg="gray", fg="black",font="times 16 bold", value=4, variable = var2).grid(row=5,column=5,sticky=W)
+
+    Radiobutton(window, text="Aventura", bg="gray", fg="black",font="times 16 bold", value=1, variable = var3).grid(row=6,column=2,sticky=W)
+    Radiobutton(window, text="Comida Rapida", bg="gray", fg="black",font="times 16 bold", value=2, variable = var3).grid(row=6,column=3,sticky=W)
+    Radiobutton(window, text="Nocturno", bg="gray", fg="black",font="times 16 bold", value=3, variable = var3).grid(row=6,column=4,sticky=W)
+    Radiobutton(window, text="Relajante", bg="gray", fg="black",font="times 16 bold", value=4, variable = var3).grid(row=6,column=5,sticky=W)
+    Radiobutton(window, text="Comida Nacional", bg="gray", fg="black",font="times 16 bold", value=5, variable = var3).grid(row=6,column=6,sticky=W)
+    Radiobutton(window, text="Comida Gourmet", bg="gray", fg="black",font="times 16 bold", value=6, variable = var3).grid(row=6,column=7,sticky=W)
+
+
+    #Entry(window, bg="gray", fg = "white", font="times 16 bold italic").grid(row=4,column=2, sticky=W)
+    #Entry(window, bg="gray", fg = "white", font="times 16 bold italic").grid(row=5,column=2, sticky=W)
+    #Entry(window, bg="gray", fg = "white", font="times 16 bold italic").grid(row=6,column=2, sticky=W)
+
+    #Cuando presiona el boton
+    Button(window, text="INGRESAR", bg="black", fg="white", font="times 16 bold", command=ResultsPage).grid(row=10,columnspan=6)
+
+
+
+
+    window.mainloop()
+StartPage()
 
